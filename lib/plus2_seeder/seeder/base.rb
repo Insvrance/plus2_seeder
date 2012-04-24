@@ -11,7 +11,7 @@ module Plus2Seeder
 
 
       def run(seeder_name)
-        Plus2Seeder.run(seeder_name)
+        Plus2Seeder::Conductor.run(seeder_name)
       end
 
 
