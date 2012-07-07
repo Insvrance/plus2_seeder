@@ -10,6 +10,16 @@ module Plus2Seeder
       end
 
 
+      def self.creator_class
+        @creator_class
+      end
+
+
+      def self.creator_class=(class_name)
+        @creator_class ||= class_name
+      end
+
+
       def run(seeder_name)
         Plus2Seeder::Conductor.run(seeder_name)
       end
@@ -26,7 +36,7 @@ module Plus2Seeder
 
       # Determines the model class to use based on the name of the seeder
       def creator_class
-        @creator_class ||= self.class.name.gsub('Seeder', '').constantize
+        @creator_class ||= (self.class.creator_class || self.class.name.gsub('Seeder', '')).constantize
       end
 
 
