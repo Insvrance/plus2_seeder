@@ -47,7 +47,7 @@ module Plus2Seeder
 
 
       # Opens the spreadsheet and calls import for each row
-      def seed
+      def seed_from_spreadsheet
         self.class.source.each do |source|
           book = ::Spreadsheet.open source
 
